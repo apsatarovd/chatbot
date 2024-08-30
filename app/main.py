@@ -5,7 +5,7 @@ bot =  telebot.TeleBot('7292320375:AAH3488C1HEFoCQMv64N0ozidOJxcqEqTNs')
 
 @bot.message_handler(commands=['start'])
 def handle_start(message):
-    bot.send_message(message.chat.id, "Добро пожаловать в наш барбершоп! Как я могу вам помочь?")
+    bot.send_message(message.chat.id, "Добро пожаловать в наш барбершоп! Чем я могу вам помочь?")
 
 
 
@@ -29,7 +29,7 @@ def handle_price(message):
 @bot.message_handler(commands=["freetime"])
 def send_time(message):
     if free_time:
-        text = "Свободные окошки:\n"
+        text = "Свободные окошки на сегодня:\n"
         for time in free_time:
             text += f"- {time}\n"
     bot.reply_to(message, text)

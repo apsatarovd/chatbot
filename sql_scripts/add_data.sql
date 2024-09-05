@@ -29,28 +29,8 @@ INSERT INTO service_record values (6,7), (3,2);
 
 
 
--- Обновление данных в таблицах
-UPDATE service
-SET price = 2000
-WHERE id = 1;
-
-UPDATE client
-SET phone = '111-222-3333'
-WHERE id = 2;
-
--- Удаление данных в таблицах
-DELETE FROM service
-WHERE id = 1;
-
-DELETE FROM client
-WHERE id = 2;
 
 
--- УДАЛЕНИЕ ТАБЛИЦЫ 
-DROP TABLE IF EXISTS barber;
-
--- УДАЛЕНИЕ БАЗЫ В ТАБЛИЦЕ 
-DELETE FROM barber;
 
 
 -- Чтение данных из таблиц

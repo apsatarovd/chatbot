@@ -4,6 +4,7 @@ from .db import Base
 from sqlalchemy.orm import relationship
 
 
+
 # Промежуточная таблица для связи "многие ко многим"
 service_record = Table('service_record', Base.metadata,
     Column('record_id', Integer, ForeignKey('record.id'), primary_key=True),
@@ -40,13 +41,13 @@ class ClientSchema(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     first_name = Column(Text)
     last_name = Column(Text)
-    phone = Column(VARCHAR)
+    phone = Column(VARCHAR(255))
     records = relationship('RecordSchema', backref='client')
     
 class CreateClientRequest(BaseModel):
     first_name: str
     last_name: str
-    phone: VARCHAR
+    phone: str
 
 
 
